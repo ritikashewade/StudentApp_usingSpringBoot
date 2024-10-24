@@ -20,5 +20,33 @@ public class StudentException {
 		structure.setData(ex.getMessage());
 		return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.BAD_REQUEST);
 	}
-
+	
+	@ExceptionHandler(StudInvalid_id.class)
+	public ResponseEntity<ResponseStructure<String>> studInvalidId(StudInvalid_id ex){
+		ResponseStructure<String> structure = new ResponseStructure<String>();
+		structure.setStatusCode(HttpStatus.BAD_REQUEST.value());
+		structure.setMessage("bad request");
+		structure.setData(ex.getMessage());
+		return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(StudPhoneNotValid.class)
+	public ResponseEntity<ResponseStructure<String>> studPhoneNotValid(StudPhoneNotValid ex){
+		ResponseStructure<String> structure = new ResponseStructure<String>();
+		structure.setStatusCode(HttpStatus.BAD_REQUEST.value());
+		structure.setMessage("bad request");
+		structure.setData(ex.getMessage());
+		return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(StudEmailNotFound.class)
+	public ResponseEntity<ResponseStructure<String>> studEmailNotFound(StudEmailNotFound ex){
+		ResponseStructure<String> structure = new ResponseStructure<String>();
+		structure.setStatusCode(HttpStatus.BAD_REQUEST.value());
+		structure.setMessage("bad request");
+		structure.setData(ex.getMessage());
+		return new ResponseEntity<ResponseStructure<String>>(structure,HttpStatus.BAD_REQUEST);
+	}
 }
+
+
